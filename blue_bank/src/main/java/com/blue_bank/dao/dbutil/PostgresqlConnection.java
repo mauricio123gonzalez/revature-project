@@ -1,11 +1,12 @@
 package com.blue_bank.dao.dbutil;
-
+//initialized swe?
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class PostgresqlConnection {
-
+	
+	
 	private static Connection connection;
 	
 	private PostgresqlConnection() {
@@ -22,4 +23,5 @@ public class PostgresqlConnection {
 		connection=DriverManager.getConnection(url, username, password);
 		return connection;
 	}
+
 }
