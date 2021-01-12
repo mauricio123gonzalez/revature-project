@@ -6,19 +6,21 @@ public class Users {
 	private String username;
 	private String password;
 	private int accountstatus;
+	private String type;
 	private double balance;
 	
 	public Users() {
 		
 	}
 	
-	public Users(int uid, String username, String password, int accountstatus, double balance) {
+	public Users(int uid, String username, String password, int accountstatus, String type, double balance) {
 		
 		super();
 		this.uid = uid;
 		this.username = username;
 		this.password = password;
 		this.accountstatus = accountstatus;
+		this.type = type;
 		this.balance = balance;
 	}
 	
@@ -46,13 +48,13 @@ public class Users {
 		this.password=password;
 	}
 	
-//	public int getAccountStatus() {
-//		return accountstatus;
-//	}
+	public int getAccountStatus() {
+		return accountstatus;
+	}
 	
-//	public void setAccountStatus() {
-//		this.uid=uid;
-//	}
+	public void setAccountStatus() {
+		this.accountstatus=accountstatus;
+	}
 	
 	public double getBalance() {
 		return balance;

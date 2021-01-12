@@ -17,25 +17,32 @@ public class BlueBankMain {
 		
 		Scanner sc=new Scanner(System.in);
 		int ch=0;
-		int uid = Integer.parseInt(sc.nextLine());
-//		Users users=UsersSearchService.getUserByID(uid);
-		System.out.println("1");
+		//int uid = Integer.parseInt(sc.nextLine());
 		//BlueBankSearch
 		do {
 			try {
+				log.info("Welcome to the BlueBank official app!");
+				log.info("--------------------------------------------");
+				log.info("Please choose Log in to log in or Exit to exit the app");
+				log.info("1) Log in");
+				log.info("2) Exit");
+
 				ch=Integer.parseInt(sc.nextLine());
 			}catch(NumberFormatException e) {
 				
 			}
 			switch (ch) {
 			case 1: 
+				log.info("Please enter your username");
+				log.info("---------------------------------------------");
+				
 				break;
-			case 2: 
-				break;
-			case 3: 
-				break;
-			case 4: 
-				break;
+			case 2:
+				log.info("Thank you for using the BlueBank Official app!");
+				log.info("Shutting down...");
+
+				return;
+				//break;
 			}
 		}while(ch!=5);
 
