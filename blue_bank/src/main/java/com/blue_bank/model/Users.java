@@ -46,13 +46,13 @@ public class Users {
 		this.password=password;
 	}
 	
-	public int getAccountStatus() {
-		return accountstatus;
-	}
+//	public int getAccountStatus() {
+//		return accountstatus;
+//	}
 	
-	public void setAccountStatus() {
-		this.uid=uid;
-	}
+//	public void setAccountStatus() {
+//		this.uid=uid;
+//	}
 	
 	public double getBalance() {
 		return balance;
