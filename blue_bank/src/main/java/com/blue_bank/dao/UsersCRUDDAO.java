@@ -13,10 +13,13 @@ public interface UsersCRUDDAO {
 	
 	public Users getUserByUserName(String username) throws BusinessException; //view account
 	
-	public Users depositAmount(double balance) throws BusinessException;
-	//public Users get
-	public Users withdrawAmount(double balance) throws BusinessException;
+	public Users depositAmount(String username, double balance, double amount) throws BusinessException;
+	
+	public Users withdrawAmount(String username, double balance, double amount) throws BusinessException;
+	
+	public Users approveAccount(int account);
 
 	public List<Users> getAllUsers() throws BusinessException;
+	
 	
 }

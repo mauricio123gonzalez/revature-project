@@ -13,9 +13,9 @@ public interface UsersCRUDService {
 	
 	public Users getUserByUserName(String username) throws BusinessException; //view account
 	
-	public Users depositAmount(double balance, double amount) throws BusinessException;
+	public Users depositAmount(String username, double balance, double amount) throws BusinessException;
 	
-	public Users withdrawAmount(double balance, double amount) throws BusinessException;
+	public Users withdrawAmount(String username, double balance, double amount) throws BusinessException;
 	
 	public Users approveAccount(int account);
 

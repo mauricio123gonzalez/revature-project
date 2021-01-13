@@ -28,7 +28,7 @@ public class Users {
 		return uid;
 	}
 	
-	public void setUid() {
+	public void setUid(int id) {
 		this.uid=uid;
 	}
 	
@@ -36,7 +36,7 @@ public class Users {
 		return username;
 	}
 	
-	public void setUsername() {
+	public void setUsername(String username) {
 		this.username=username;
 	}
 	
@@ -44,7 +44,7 @@ public class Users {
 		return password;
 	}
 	
-	public void setPassword() {
+	public void setPassword(String password) {
 		this.password=password;
 	}
 	
@@ -52,7 +52,7 @@ public class Users {
 		return accountstatus;
 	}
 	
-	public void setAccountStatus() {
+	public void setAccountStatus(int accountstatus) {
 		this.accountstatus=accountstatus;
 	}
 	
@@ -60,7 +60,7 @@ public class Users {
 		return type;
 	}
 	
-	public void setType() {
+	public void setType(String type) {
 		this.type=type;
 	}
 	
@@ -68,7 +68,7 @@ public class Users {
 		return balance;
 	}
 	
-	public void setBalance() {
+	public void setBalance(double balance) {
 		this.balance=balance;
 	}
 	

@@ -4,24 +4,32 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
+import com.blue_bank.exception.BusinessException;
 import com.blue_bank.model.Users;
 import com.blue_bank.service.UsersCRUDService;
+import com.blue_bank.service.impl.UsersCRUDServiceImpl;
 
 public class BlueBankMain {
 
 	public static Logger log = Logger.getLogger(BlueBankMain.class);
+	
+	public static UsersCRUDService usersCRUDService = new UsersCRUDServiceImpl();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BusinessException{
 		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
+		
 		int ch = 0; // login or exit
 		int ch0 = 0; // employee or customer selection
 		int ch1 = 0; // customer selection after login
 		int ch2 = 0; // employee selection after login
+		Double withdrawAmountScanner = 0d;
+		Double depositAmountScanner = 0d;
 		String typeEntered = "";
 		String userNameEntered = "";
 		String passWordEntered = "";
+	//	String viewAccount="";
 		// int uid = Integer.parseInt(sc.nextLine());
 		// BlueBankSearch
 		do {
@@ -50,7 +58,7 @@ public class BlueBankMain {
 
 					switch (ch0) {
 					case 1:
-						log.info("Hello customer " +userNameEntered+",what would you like to do today?");
+						log.info("Hello customer " +userNameEntered+",how can we service you today?");
 						log.info("1: View account");
 						log.info("2: Create account");
 						log.info("3: Withdraw from account");
@@ -64,13 +72,41 @@ public class BlueBankMain {
 							switch(ch1) {
 							case 1:
 								log.info("view account");
+								try {
+									String username = userNameEntered;
+									Users user=usersCRUDService.getUserByUserName(username);
+									log.info(user);					
+								}finally {
+									
+								}
 								ch1=0;
 								break;
 							case 2:
 								break;
 							case 3:
+								try {
+									log.info("How much would you like to withdraw?");
+									withdrawAmountScanner=Double.parseDouble(sc.nextLine());
+									usersCRUDService.withdrawAmount(userNameEntered,1 ,withdrawAmountScanner);
+									
+									
+								}finally {
+									
+								}
+								ch1=0;
 								break;
 							case 4:
+								try {
+									log.info("How much would you like to deposit?");
+									depositAmountScanner=Double.parseDouble(sc.nextLine());
+									usersCRUDService.depositAmount(userNameEntered,1 ,depositAmountScanner);
+									
+									
+
+								}finally {
+									
+								}
+								ch1=0;
 								break;
 							case 5:
 								break;
@@ -95,6 +131,25 @@ public class BlueBankMain {
 								ch2=0;
 								break;
 							case 2:
+								log.info("Please enter the username of the desired account");
+								String username=sc.nextLine();
+								try {
+									
+									Users user=usersCRUDService.getUserByUserName(username);
+									if(user!=null) {
+										log.info("Account details: ");
+										log.info(user);
+										
+									}else {
+										log.info("search for username not working");
+									}
+								}catch (NumberFormatException e) {
+									log.info("incorrect format");
+								}catch (BusinessException e) {
+									log.info(e.getMessage());
+									break;
+								}
+								ch2=0;
 								break;
 							case 3:
 								break;

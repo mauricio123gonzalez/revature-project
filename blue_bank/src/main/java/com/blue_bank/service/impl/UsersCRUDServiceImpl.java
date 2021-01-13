@@ -26,19 +26,23 @@ public class UsersCRUDServiceImpl implements UsersCRUDService{
 
 	@Override
 	public Users getUserByUserName(String username) throws BusinessException {
+		Users user = null;
+		user = usersCRUDDAO.getUserByUserName(username);
 		// TODO Auto-generated method stub
+		return user;
+	}
+
+	@Override
+	public Users depositAmount(String username, double balance, double amount) throws BusinessException {
+		// TODO Auto-generated method stub
+		usersCRUDDAO.depositAmount(username, balance, amount);
 		return null;
 	}
 
 	@Override
-	public Users depositAmount(double balance, double amount) throws BusinessException {
+	public Users withdrawAmount(String username, double balance, double amount) throws BusinessException {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Users withdrawAmount(double balance, double amount) throws BusinessException {
-		// TODO Auto-generated method stub
+		usersCRUDDAO.withdrawAmount(username, balance, amount);
 		return null;
 	}
 
@@ -50,8 +54,11 @@ public class UsersCRUDServiceImpl implements UsersCRUDService{
 
 	@Override
 	public List<Users> getAllUsers() throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Users> allUsersList=null;
+		allUsersList=usersCRUDDAO.getAllUsers();
+
+		return allUsersList;
 	}
 	
 
