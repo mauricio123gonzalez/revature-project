@@ -56,6 +56,14 @@ public class Users {
 		this.accountstatus=accountstatus;
 	}
 	
+	public String getType() {
+		return type;
+	}
+	
+	public void setType() {
+		this.type=type;
+	}
+	
 	public double getBalance() {
 		return balance;
 	}
@@ -64,7 +72,7 @@ public class Users {
 		this.balance=balance;
 	}
 	
-//	@Override
-//	public String toString() {
-//		return "
-}
+	@Override
+	public String toString() {
+		return "User [uid = "+uid+", username = "+username+", password = "+password+", accountstatus = "+accountstatus+"type ="+type+"balance = "+balance+"]";
+}}
