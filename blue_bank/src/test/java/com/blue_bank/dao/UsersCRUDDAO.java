@@ -1,11 +1,11 @@
-package com.blue_bank.service;
+package com.blue_bank.dao;
 
 import java.util.List;
 
 import com.blue_bank.exception.BusinessException;
 import com.blue_bank.model.Users;
 
-public interface UsersCRUDService {
+public interface UsersCRUDDAO {
 	
 	public int createUser(Users users) throws BusinessException; // create account
 	
@@ -22,5 +22,4 @@ public interface UsersCRUDService {
 	public List<Users> getAllUsers() throws BusinessException;
 	
 	
-
 }

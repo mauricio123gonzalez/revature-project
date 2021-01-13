@@ -1,0 +1,19 @@
+info
+--------------------------------------------
+Welcome to the BlueBank official app!
+--------------------------------------------
+Please log in or exit the app by making the appropriate selection below
+1) Log in
+2) Exit
+Please type 1 for customer or 2 for employee
+Please enter your username
+Please ener your password
+Hello customer customer1,how can we service you today?
+1: View account
+2: Create account
+3: Withdraw from account
+4: Deposit into account
+5: Transfer money to another account
+6: Accept pending money transfers
+view account
+User [uid = 0, username = customer1, password = password, accountstatus = 1type =customerbalance = 334.0]
